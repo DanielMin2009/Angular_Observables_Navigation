@@ -1,1 +1,154 @@
-/* You can add global styles to this file, and also import other style files */
+// Colors
+$dark: #516a7c;
+$turquoise: #4bbab5;
+$blue: #00b1ff;
+$ecru: #e9eff4;
+$grey: #b8b9b4;
+
+// Other Variables
+$border-radius: 0.5rem;
+$cubic-bezier: cubic-bezier(1, 0, 0.4, 0.46);
+$default-font: "Gotham", Arial, Helvetica, sans-serif;
+$border-light: 1px solid
+    darken(
+        $color: $ecru,
+        $amount: 4%,
+    );
+$border-radius: 26px;
+$border-radius-sm: 0.66rem;
+// Structure
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: "Gotham", Arial, Helvetica, sans-serif;
+    background-color: rgba($color: $ecru, $alpha: 0.3);
+    color: $dark;
+}
+h1 {
+    color: $dark;
+}
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: $dark;
+}
+
+.container {
+    @media (min-width: 1500px) {
+        width: 87%;
+    }
+}
+// Fonts
+@mixin commonText {
+    font: {
+        font-family: "Gotham", Arial, Helvetica, sans-serif;
+        size: 0.88rem;
+        letter-spacing: 0.05rem;
+    }
+}
+.emphasis {
+    color: $turquoise;
+    font-weight: 500;
+}
+@mixin commonButton {
+    color: $dark;
+    border: 1px solid $dark;
+    padding: 0.46rem 0.46rem;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 $dark;
+    -webkit-transition: all ease 0.25s;
+    -moz-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+    @media (max-width: 992px) {
+        font: {
+            size: 0.88rem;
+        }
+        width: 100%;
+    }
+    @media (min-width: 992px) {
+        width: 66%;
+    }
+}
+.no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+}
+hr {
+    width: 4.7rem;
+    height: 0.3rem;
+    margin: 1.46rem 0 2.6rem 0;
+    background-color: $turquoise;
+    border-top: transparent;
+}
+.breadcrumb {
+    background-color: transparent;
+}
+// Correction Default Styles
+button {
+    color: $dark;
+    cursor: default;
+    background-color: transparent;
+    padding: 1px 6px;
+    border-width: 0;
+    border-style: outset;
+    border-color: transparent;
+    border: none;
+}
+button:focus {
+    outline: none !important;
+}
+:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+    outline: -ms-focus-ring-color auto 0px;
+    outline: -o-focus-ring-color auto 0px;
+    outline: -moz-focus-ring-color auto 0px;
+}
+// Selector
+::selection {
+    color: white;
+    background: $turquoise;
+}
+.mTop {
+    margin-top: 30vh;
+}
+.btn {
+    @include commonButton;
+    &:hover {
+        box-shadow: inset 0 0 0 50px $dark;
+        color: $ecru;
+    }
+}
+// Animations
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
