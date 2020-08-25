@@ -1,0 +1,2 @@
+# Angular_Observables_Navigation
+Angular practicing navigation through observables
